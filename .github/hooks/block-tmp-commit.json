@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": ".github/hooks/block-tmp-commit.sh",
+        "timeout": 5
+      }
+    ]
+  }
+}

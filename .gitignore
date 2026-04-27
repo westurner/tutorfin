@@ -5,6 +5,7 @@ node_modules
 
 # Testing
 /coverage
+.tmp/
 
 # Production
 /build
@@ -83,8 +84,6 @@ packages/*/node_modules/
 # OS / editor
 .DS_Store
 Thumbs.db
-
-.tmp/
 
 packages/ledgertext-ts/coverage/
 
