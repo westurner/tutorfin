@@ -83,3 +83,8 @@ packages/*/node_modules/
 # OS / editor
 .DS_Store
 Thumbs.db
+
+.tmp/
+
+packages/ledgertext-ts/coverage/
+
