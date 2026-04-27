@@ -45,4 +45,31 @@ describe("BeancountAdapter", () => {
   it("unknown syntax throws", () => {
     expect(() => load("", "hledger")).toThrowError(/No LedgerText adapter/);
   });
+
+  it("isBalanced returns false when postings do not net to zero", () => {
+    const ledger = load(`
+2026-04-01 open Assets:Cash
+2026-04-01 open Income:Sales
+
+2026-04-02 * "Unbalanced"
+  Assets:Cash    10.00 USD
+  Income:Sales   -5.00 USD
+`);
+    expect(isBalanced(ledger.transactions[0])).toBe(false);
+  });
+
+  it("ignores stray dated directives and records unrecognised lines", () => {
+    const ledger = load(`
+garbage line outside any transaction
+2026-04-01 balance Assets:Cash 0 USD
+2026-04-01 open Assets:Cash
+
+2026-04-02 * "Tx"
+  Assets:Cash    1.00 USD
+  Assets:Cash   -1.00 USD
+`);
+    expect(ledger.accounts).toEqual(["Assets:Cash"]);
+    expect(ledger.transactions).toHaveLength(1);
+    expect(ledger.errors).toEqual(["unrecognised line: garbage line outside any transaction"]);
+  });
 });
