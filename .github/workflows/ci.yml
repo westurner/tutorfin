@@ -102,6 +102,8 @@ jobs:
   e2e:
     name: Playwright E2E
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.50.0-noble
     needs: typescript
     steps:
       - uses: actions/checkout@v6
@@ -115,7 +117,6 @@ jobs:
       - name: Install
         run: |
           pnpm install --frozen-lockfile=false
-          pnpm exec playwright install --with-deps chromium
       - name: Set artifact directory
         id: artifacts
         run: |
