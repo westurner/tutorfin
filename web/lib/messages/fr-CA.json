@@ -6,5 +6,8 @@
   "reset.body": "L’exposition se réinitialisera dans {seconds} secondes.",
   "reset.keep": "Continuer",
   "reset.now": "Réinitialiser maintenant",
-  "reset.manual": "Réinitialiser l’exposition"
+  "reset.manual": "Réinitialiser l’exposition",
+  "scene.label": "Scène interactive",
+  "scene.coin.income": "Pièce de revenu. Activez pour en savoir plus sur les revenus.",
+  "scene.coin.expense": "Pièce de dépense. Activez pour en savoir plus sur les dépenses."
 }

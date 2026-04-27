@@ -6,5 +6,8 @@
   "reset.body": "La exhibición se reiniciará en {seconds} segundos.",
   "reset.keep": "Seguir",
   "reset.now": "Reiniciar ahora",
-  "reset.manual": "Reiniciar exhibición"
+  "reset.manual": "Reiniciar exhibición",
+  "scene.label": "Escena interactiva",
+  "scene.coin.income": "Moneda de ingresos. Activa para aprender sobre ingresos.",
+  "scene.coin.expense": "Moneda de gastos. Activa para aprender sobre gastos."
 }

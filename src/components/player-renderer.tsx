@@ -1,4 +1,5 @@
 import { useGLTF } from '@react-three/drei';
+import { A11y } from '@react-three/a11y';
 import { Entity } from 'koota';
 import { useQueryFirst } from 'koota/react';
 import { useRef, MutableRefObject, useCallback } from 'react';
@@ -31,9 +32,11 @@ export function PlayerView({ entity }: { entity: Entity }) {
 	);
 
 	return (
-		<group ref={setInitial}>
-			<primitive object={scene} />
-		</group>
+		<A11y role="content" description="Player ship">
+			<group ref={setInitial}>
+				<primitive object={scene} />
+			</group>
+		</A11y>
 	);
 }
 

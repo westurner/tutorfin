@@ -2,6 +2,7 @@
 
 import { FormattedMessage } from "react-intl";
 import { useExhibitStore } from "@/lib/store";
+import { AccessibleScene } from "@/components/accessible-scene";
 
 export default function HomePage() {
   const { locale, setLocale, manualReset } = useExhibitStore();
@@ -32,6 +33,13 @@ export default function HomePage() {
             {loc}
           </button>
         ))}
+      </section>
+
+      <section style={{ marginTop: "2rem" }}>
+        <h2>
+          <FormattedMessage id="scene.label" defaultMessage="Interactive scene" />
+        </h2>
+        <AccessibleScene />
       </section>
 
       <section style={{ marginTop: "2rem" }}>

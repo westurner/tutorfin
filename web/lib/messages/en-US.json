@@ -6,5 +6,8 @@
   "reset.body": "The exhibit will reset in {seconds} seconds.",
   "reset.keep": "Keep going",
   "reset.now": "Reset now",
-  "reset.manual": "Reset exhibit"
+  "reset.manual": "Reset exhibit",
+  "scene.label": "Interactive scene",
+  "scene.coin.income": "Income coin. Activate to learn about income.",
+  "scene.coin.expense": "Expense coin. Activate to learn about expenses."
 }
