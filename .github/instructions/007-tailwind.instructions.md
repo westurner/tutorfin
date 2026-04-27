@@ -1,0 +1,10 @@
+---
+name: "007 Tailwind"
+description: "Tailwind CSS usage rules for styling (2025 best practices)"
+applyTo: src/components/**/*.tsx,*.css
+---
+- Use Tailwind utility classes for consistent styling, with custom CSS only for special cases  
+- Organize classes logically (layout, spacing, color, typography)  
+- Use responsive and state variants (e.g., sm:, md:, lg:, hover:, focus:, dark:) in markup  
+- Embrace Tailwind v4 features like container queries and CSS variables  
+- Rely on Tailwind classes rather than inline styles or external CSS files for a unified design language  
