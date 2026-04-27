@@ -1,9 +1,15 @@
 {
-  "name": ".",
+  "name": "tutorfin",
   "version": "0.0.0",
   "private": true,
   "description": "Financial literacy tutor app",
+  "author": "westurner",
+  "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/westurner/tutorfin"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,23 +17,8 @@
     "clean": "npx rimraf node_modules && npm install",
     "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/instructa/viber3d"
-  },
   "keywords": [
-    "viber3d",
-    "cli",
-    "three",
-    "threejs",
-    "project-setup",
-    "cursor",
-    "cursor-ai",
-    "ai-coding",
-    "instructa"
   ],
-  "author": "westurner",
-  "license": "MIT",
   "dependencies": {
     "koota": "^0.2.3",
     "@react-three/drei": "^9.120.8",
