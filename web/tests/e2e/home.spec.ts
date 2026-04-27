@@ -28,7 +28,7 @@ test.describe("@tutorfin/web home page", () => {
     await page.getByRole("button", { name: "es-US" }).click();
     await expect(page.getByRole("button", { name: "es-US" })).toBeDisabled();
     page.on("dialog", (dialog) => dialog.accept());
-    await page.getByRole("button", { name: /Reset exhibit/i }).click();
+    await page.getByRole("button", { name: /Reiniciar exhibición/i }).click();
     // After reset, en-US should be active again (disabled)
     await expect(page.getByRole("button", { name: "en-US" })).toBeDisabled();
   });
