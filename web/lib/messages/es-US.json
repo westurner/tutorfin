@@ -1,0 +1,10 @@
+{
+  "app.title": "TutorFin",
+  "app.tagline": "Una exhibición guiada de educación financiera.",
+  "lang.label": "Idioma",
+  "reset.title": "¿Sigues ahí?",
+  "reset.body": "La exhibición se reiniciará en {seconds} segundos.",
+  "reset.keep": "Seguir",
+  "reset.now": "Reiniciar ahora",
+  "reset.manual": "Reiniciar exhibición"
+}

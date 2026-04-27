@@ -1,0 +1,34 @@
+{
+  "name": "@tutorfin/web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "preview": "opennextjs-cloudflare build && wrangler dev",
+    "deploy": "opennextjs-cloudflare build && wrangler deploy"
+  },
+  "dependencies": {
+    "@react-three/a11y": "^3.0.0",
+    "@react-three/drei": "^9.120.8",
+    "@react-three/fiber": "^8.17.12",
+    "@tutorfin/ledgertext": "workspace:*",
+    "next": "^15.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-intl": "^7.0.0",
+    "three": "^0.173.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "^0.5.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/three": "^0.173.0",
+    "typescript": "^5.7.3",
+    "wrangler": "^3.80.0"
+  }
+}

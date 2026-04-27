@@ -1,0 +1,10 @@
+{
+  "app.title": "TutorFin",
+  "app.tagline": "A guided financial-literacy exhibit.",
+  "lang.label": "Language",
+  "reset.title": "Still here?",
+  "reset.body": "The exhibit will reset in {seconds} seconds.",
+  "reset.keep": "Keep going",
+  "reset.now": "Reset now",
+  "reset.manual": "Reset exhibit"
+}
