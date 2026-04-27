@@ -1,0 +1,49 @@
+[project]
+name = "tutorfin"
+version = "0.0.0"
+description = "TutorFin financial-literacy curriculum, notebooks, and LedgerText abstraction."
+requires-python = ">=3.11"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "TutorFin contributors" }]
+
+dependencies = [
+    "beancount>=2.3,<4.0",
+]
+
+[project.optional-dependencies]
+notebooks = [
+    "jupyter",
+    "jupyterlab",
+    "jupytext>=1.16",
+    "myst-parser",
+    "nbformat",
+    "nbclient",
+]
+test = [
+    "pytest>=8",
+    "pytest-cov",
+    "nbclient",
+    "jupytext>=1.16",
+]
+dev = [
+    "ruff",
+    "mypy",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["packages/ledgertext-py/src"]
+
+[tool.setuptools.package-dir]
+"" = "packages/ledgertext-py/src"
+
+[tool.pytest.ini_options]
+testpaths = ["packages/ledgertext-py/tests", "tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100

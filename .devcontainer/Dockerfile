@@ -12,6 +12,9 @@ RUN --mount=type=cache,id=dnf,target=/var/cache/dnf,sharing=locked \
     python3 \
     python3-pip \
     python3-devel \
+    gcc \
+    gcc-c++ \
+    make \
     nodejs \
     npm \
     yarn \
