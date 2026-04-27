@@ -45,3 +45,7 @@ RUN sudo useradd -s /bin/bash -u 1000 -m vscode || true \
 # Setup the primary user
 USER vscode
 WORKDIR /workspace
+
+# Disable Next.js anonymous telemetry without requiring the `next` CLI at build time.
+RUN mkdir -p /home/vscode/.config/nextjs-nodejs \
+    && echo '{"telemetry":{"enabled":false}}' > /home/vscode/.config/nextjs-nodejs/config.json
