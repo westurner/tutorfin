@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -26,8 +27,9 @@ Revenue, Cost of Goods Sold (COGS), and Gross Margin.
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -50,7 +52,7 @@ print(json.dumps(LD, indent=2))
 
 Sell a cup of lemonade for $2. Lemons + cup cost $0.80.
 
-```{code-cell} python
+```{code-cell} ipython3
 price, cogs = 2.00, 0.80
 unit_margin = (price - cogs) / price
 print(f"Unit margin: {unit_margin:.0%}")
@@ -61,7 +63,7 @@ assert unit_margin == 0.6
 
 Fixed monthly costs $300. Per-unit gross profit $1.20.
 
-```{code-cell} python
+```{code-cell} ipython3
 fixed = 300
 unit_profit = 1.20
 break_even = fixed / unit_profit
@@ -73,7 +75,7 @@ assert 249 < break_even < 251
 
 If per-unit gross profit is **negative**, what happens as you sell more? Demonstrate.
 
-```{code-cell} python
+```{code-cell} ipython3
 price, cogs = 1.00, 1.20
 loss_per_unit = price - cogs
 losses = [loss_per_unit * n for n in (10, 100, 1000)]

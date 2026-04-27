@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -26,8 +27,9 @@ Calculating ROI and margin of specific projects.
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -50,7 +52,7 @@ print(json.dumps(LD, indent=2))
 
 Lemonade stand: revenue $300, COGS $120. Gross margin?
 
-```{code-cell} python
+```{code-cell} ipython3
 revenue, cogs = 300, 120
 gross_margin = (revenue - cogs) / revenue
 print(f"Gross margin: {gross_margin:.0%}")
@@ -61,7 +63,7 @@ assert gross_margin == 0.6
 
 Total costs $200, revenue $300, project ran 1 month. Compute ROI.
 
-```{code-cell} python
+```{code-cell} ipython3
 revenue, cost = 300, 200
 roi = (revenue - cost) / cost
 print(f"ROI: {roi:.0%}")
@@ -72,7 +74,7 @@ assert roi == 0.5
 
 Project A: rev $1000, cost $700. Project B: rev $400, cost $200. Which has higher ROI? Higher absolute profit?
 
-```{code-cell} python
+```{code-cell} ipython3
 def stats(rev: float, cost: float) -> dict:
     profit = rev - cost
     return {"profit": profit, "roi": profit / cost}

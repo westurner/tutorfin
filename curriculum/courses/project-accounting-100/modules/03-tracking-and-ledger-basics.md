@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -26,8 +27,9 @@ Introduction to double-entry accounting using **LedgerText** (Beancount syntax â
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -50,7 +52,7 @@ print(json.dumps(LD, indent=2))
 
 Below is the lemonade-stand startup posted in Beancount syntax.
 
-```{code-cell} python
+```{code-cell} ipython3
 journal = """
 2026-04-01 open Assets:Cash
 2026-04-01 open Equity:Opening-Balances
@@ -76,7 +78,7 @@ print(journal)
 
 Verify that every transaction's postings sum to zero.
 
-```{code-cell} python
+```{code-cell} ipython3
 import re
 
 def split_transactions(text: str) -> list[list[str]]:
@@ -106,7 +108,7 @@ for i, txn in enumerate(split_transactions(journal), 1):
 
 Compute the closing balance of `Assets:Cash`.
 
-```{code-cell} python
+```{code-cell} ipython3
 def account_balance(text: str, account: str) -> float:
     bal = 0.0
     for line in text.splitlines():
@@ -123,7 +125,7 @@ assert cash == 125.00, "Started 100, spent 35, sold 60 â†’ 125."
 
 Add a `2026-04-04` posting that records selling $40 more lemonade for cash, then re-run the balance.
 
-```{code-cell} python
+```{code-cell} ipython3
 addition = """
 2026-04-04 * "Day-2 sales"
   Assets:Cash                            40.00 USD

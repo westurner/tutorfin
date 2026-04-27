@@ -1,0 +1,6 @@
+# Default formats: keep .md (MyST) as source of truth, generate .ipynb on demand.
+# Run: `jupytext --sync curriculum/courses/**/modules/*.md` or
+#      `jupytext --to notebook curriculum/courses/**/modules/*.md`
+default_jupytext_formats = "md:myst"
+notebook_metadata_filter = "tutorfin,kernelspec,jupytext"
+cell_metadata_filter = "tags,-all"

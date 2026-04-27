@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -26,8 +27,9 @@ Financial aid, student loans, and ROI on education.
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -50,7 +52,7 @@ print(json.dumps(LD, indent=2))
 
 Sticker price $30,000/yr. Grants $8,000, scholarships $4,000. What's the annual net cost?
 
-```{code-cell} python
+```{code-cell} ipython3
 sticker, grants, scholarships = 30_000, 8_000, 4_000
 net = sticker - grants - scholarships
 print(f"Net cost per year: ${net}")
@@ -61,7 +63,7 @@ assert net == 18_000
 
 $20,000 student loan at 6% APR over 10 years. Compute monthly payment using the standard amortization formula.
 
-```{code-cell} python
+```{code-cell} ipython3
 def monthly_payment(principal: float, apr: float, years: int) -> float:
     r = apr / 12
     n = years * 12
@@ -76,7 +78,7 @@ assert abs(pmt - 222.04) < 0.5, "~$222/month"
 
 A degree raises lifetime earnings by $20,000/yr over 30 years. Total cost (tuition + foregone wages) $150,000. Simple ROI?
 
-```{code-cell} python
+```{code-cell} ipython3
 extra_earnings = 20_000 * 30
 total_cost = 150_000
 roi = (extra_earnings - total_cost) / total_cost

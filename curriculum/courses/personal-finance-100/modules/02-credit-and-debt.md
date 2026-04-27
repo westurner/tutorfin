@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -27,8 +28,9 @@ Understanding credit scores, credit cards, and interest rates.
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -53,7 +55,7 @@ print(json.dumps(LD, indent=2))
 
 $1,000 at 10% for 3 years: simple vs. annually compounded.
 
-```{code-cell} python
+```{code-cell} ipython3
 principal, rate, years = 1000, 0.10, 3
 simple = principal * rate * years
 compound = principal * (1 + rate) ** years - principal
@@ -66,7 +68,7 @@ assert abs(compound - 331.0) < 0.01
 
 $1,000 balance at 24% APR. Minimum payment = max(2% of balance, $25). Simulate 12 months of minimum payments and report total interest paid.
 
-```{code-cell} python
+```{code-cell} ipython3
 def simulate_min_payments(balance: float, apr: float, months: int) -> tuple[float, float]:
     monthly_rate = apr / 12
     total_interest = 0.0
@@ -87,7 +89,7 @@ assert interest > 200, "At 24% APR most of a year is interest."
 
 Rank these factors by approximate FICO weight: payment history, amounts owed, length of history, new credit, credit mix.
 
-```{code-cell} python
+```{code-cell} ipython3
 weights = {
     "payment history": 0.35,
     "amounts owed": 0.30,

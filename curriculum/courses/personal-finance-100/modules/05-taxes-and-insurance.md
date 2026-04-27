@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -27,8 +28,9 @@ Reading a paycheck, basic tax brackets, and mitigating risk.
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -53,7 +55,7 @@ print(json.dumps(LD, indent=2))
 
 Gross $5,000/month. FICA 7.65%, federal withholding 12%, state 5%. Compute net pay.
 
-```{code-cell} python
+```{code-cell} ipython3
 gross = 5_000
 fica = gross * 0.0765
 fed = gross * 0.12
@@ -67,7 +69,7 @@ assert abs(net - 3767.50) < 0.01
 
 Simplified brackets: 10% to $10k, 20% to $40k, 30% above. Income = $60k. Compute total tax and effective rate.
 
-```{code-cell} python
+```{code-cell} ipython3
 def progressive_tax(income: float) -> float:
     brackets = [(10_000, 0.10), (30_000, 0.20), (float("inf"), 0.30)]
     tax, remaining = 0.0, income
@@ -89,11 +91,11 @@ assert abs(effective - 0.2167) < 0.001
 
 ## Exercise 3 — Insurance expected value
 
-10,000 people each pay $200/yr into a pool. Each year ~50 file a $30,000 claim. Does the pool break even?
+10,000 people each pay $200/yr into a pool. Each year ~100 file a $20,000 claim. Does the pool break even?
 
-```{code-cell} python
+```{code-cell} ipython3
 premiums = 10_000 * 200
-claims = 50 * 30_000
+claims = 100 * 20_000
 print(f"Premiums: ${premiums}, Claims: ${claims}, Surplus: ${premiums - claims}")
 assert premiums == claims, "Expected to break even at these numbers."
 ```

@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -27,8 +28,9 @@ Income vs. expenses, emergency funds, and the power of compound interest.
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -58,7 +60,7 @@ print(json.dumps(LD, indent=2))
 
 A learner earns $2,000/month and spends $1,400 on needs, $300 on wants. How much is left for saving?
 
-```{code-cell} python
+```{code-cell} ipython3
 income = 2000
 needs = 1400
 wants = 300
@@ -71,7 +73,7 @@ assert savings == 300, "Income minus needs minus wants should equal $300."
 
 A $100 monthly deposit at 5% APY (compounded monthly) for 10 years.
 
-```{code-cell} python
+```{code-cell} ipython3
 def future_value_annuity(monthly: float, annual_rate: float, years: int) -> float:
     r = annual_rate / 12
     n = years * 12
@@ -86,7 +88,7 @@ assert abs(fv - 15528.23) < 1.0, "Expected ~$15,528 after 10 years."
 
 Recommended emergency fund = 3–6 months of essential expenses. For monthly essentials of $1,400, compute the 3-month and 6-month targets.
 
-```{code-cell} python
+```{code-cell} ipython3
 essentials = 1400
 target_3mo = essentials * 3
 target_6mo = essentials * 6

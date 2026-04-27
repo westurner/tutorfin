@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -26,8 +27,9 @@ Bootstrapping, debt financing, and equity.
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -50,7 +52,7 @@ print(json.dumps(LD, indent=2))
 
 Score each funding source 1 (low) – 3 (high) on cost-of-capital, loss-of-control, and personal-risk-to-founder.
 
-```{code-cell} python
+```{code-cell} ipython3
 sources = {
     "bootstrapping": {"cost": 1, "control_loss": 1, "founder_risk": 3},
     "debt":          {"cost": 2, "control_loss": 1, "founder_risk": 2},
@@ -65,7 +67,7 @@ print(sources)
 
 Founders own 100%. They raise $200k by selling new shares at a $800k pre-money valuation. What % do founders own after?
 
-```{code-cell} python
+```{code-cell} ipython3
 pre_money = 800_000
 investment = 200_000
 post_money = pre_money + investment
@@ -78,7 +80,7 @@ assert founders_after == 0.8
 
 Project EBITDA $120k/yr; annual loan payments $40k. Compute the debt-service coverage ratio (DSCR). Is it healthy (≥ 1.25)?
 
-```{code-cell} python
+```{code-cell} ipython3
 ebitda, debt_service = 120_000, 40_000
 dscr = ebitda / debt_service
 print(f"DSCR: {dscr:.2f}")

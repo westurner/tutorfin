@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -26,8 +27,9 @@ Understanding how overhead affects a project.
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -50,7 +52,7 @@ print(json.dumps(LD, indent=2))
 
 For "Project: build a treehouse," classify each cost.
 
-```{code-cell} python
+```{code-cell} ipython3
 costs = {
     "lumber": "direct",
     "nails": "direct",
@@ -68,7 +70,7 @@ print(costs)
 
 Total monthly overhead $6,000. Project A used 80 labor-hours; Project B used 120. Allocate by labor hours.
 
-```{code-cell} python
+```{code-cell} ipython3
 overhead = 6_000
 hours = {"A": 80, "B": 120}
 total = sum(hours.values())
@@ -82,7 +84,7 @@ assert sum(allocation.values()) == overhead
 
 Direct wage $20/hr. Overhead loading 35%. What's the fully burdened cost per labor-hour?
 
-```{code-cell} python
+```{code-cell} ipython3
 wage = 20.0
 burdened = wage * 1.35
 print(f"Burdened rate: ${burdened}/hr")

@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -26,8 +27,9 @@ Reading the Balance Sheet, Income Statement, and Cash Flow Statement.
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -50,7 +52,7 @@ print(json.dumps(LD, indent=2))
 
 Match each question to the statement that answers it.
 
-```{code-cell} python
+```{code-cell} ipython3
 mapping = {
     "What does the company own and owe right now?": "Balance Sheet",
     "Did the company make a profit last quarter?":   "Income Statement",
@@ -64,7 +66,7 @@ print(mapping)
 
 Revenue $500k, COGS $200k, OpEx $150k, taxes $40k.
 
-```{code-cell} python
+```{code-cell} ipython3
 rev, cogs, opex, tax = 500_000, 200_000, 150_000, 40_000
 gross = rev - cogs
 operating = gross - opex
@@ -77,7 +79,7 @@ assert (gross, operating, net) == (300_000, 150_000, 110_000)
 
 Classify each item as Operating (O), Investing (I), or Financing (F).
 
-```{code-cell} python
+```{code-cell} ipython3
 flows = {
     "cash from customers": "O",
     "purchase of equipment": "I",

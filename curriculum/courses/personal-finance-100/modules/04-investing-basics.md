@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -27,8 +28,9 @@ Risk/reward, stocks, bonds, index funds, and retirement planning.
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -51,7 +53,7 @@ print(json.dumps(LD, indent=2))
 
 Match each asset to its typical risk profile (low/medium/high).
 
-```{code-cell} python
+```{code-cell} ipython3
 risk = {
     "savings account": "low",
     "treasury bond": "low",
@@ -67,7 +69,7 @@ print(risk)
 
 $500/month into an index fund averaging 7% real return for 40 years.
 
-```{code-cell} python
+```{code-cell} ipython3
 def future_value_annuity(monthly: float, annual_rate: float, years: int) -> float:
     r = annual_rate / 12
     n = years * 12
@@ -82,7 +84,7 @@ assert balance > 1_000_000, "Forty years of $500/mo at 7% should crack $1M."
 
 A portfolio of one stock has variance $\sigma^2$. Two uncorrelated equally-weighted stocks each with variance $\sigma^2$ have portfolio variance $\sigma^2 / 2$. Why does combining help?
 
-```{code-cell} python
+```{code-cell} ipython3
 import math
 sigma2 = 1.0
 single = sigma2

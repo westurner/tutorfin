@@ -4,6 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
+    jupytext_version: 1.19.1
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -26,8 +27,9 @@ Estimating costs (labor, materials) vs. actuals.
 
 ## Schema.org metadata
 
-```{code-cell} python
+```{code-cell} ipython3
 :tags: [hide-input]
+
 import json
 LD = {
     "@context": "https://schema.org",
@@ -50,7 +52,7 @@ print(json.dumps(LD, indent=2))
 
 Estimate: 20 labor-hours @ $10/hr, $40 in cups, $60 in lemons & sugar.
 
-```{code-cell} python
+```{code-cell} ipython3
 labor = 20 * 10
 materials = 40 + 60
 budget = labor + materials
@@ -62,7 +64,7 @@ assert budget == 300
 
 Actuals come in at: 25 hours @ $10, $45 cups, $70 lemons & sugar. Compute the variance vs. the $300 budget and classify each line as favorable or unfavorable.
 
-```{code-cell} python
+```{code-cell} ipython3
 budget = {"labor": 200, "cups": 40, "lemons_sugar": 60}
 actual = {"labor": 250, "cups": 45, "lemons_sugar": 70}
 variance = {k: actual[k] - budget[k] for k in budget}  # positive = unfavorable
@@ -76,7 +78,7 @@ assert total_var == 65
 
 Add a 10% contingency to the original $300 budget. What's the new ceiling?
 
-```{code-cell} python
+```{code-cell} ipython3
 budget = 300
 ceiling = budget * 1.10
 print(f"New ceiling: ${ceiling:.2f}")
