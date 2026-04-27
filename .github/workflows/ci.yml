@@ -113,7 +113,7 @@ jobs:
       - name: Install
         run: |
           pnpm install --frozen-lockfile=false
-          pnpm --filter @tutorfin/web exec playwright install --with-deps chromium
+          pnpm exec playwright install --with-deps chromium
       - name: Set artifact directory
         id: artifacts
         run: |
@@ -121,18 +121,14 @@ jobs:
           dir=".artifacts/${ts}-${{ github.run_id }}-e2e"
           mkdir -p "$dir"
           echo "dir=$dir" >> "$GITHUB_OUTPUT"
-      - name: Run E2E (placeholder — add tests under web/e2e)
+      - name: Run E2E
+        working-directory: ./
         run: |
           set -o pipefail
-          if [ -d web/e2e ]; then
-            pnpm --filter @tutorfin/web exec playwright test \
-              --reporter="junit,line" \
-              --output="${{ steps.artifacts.outputs.dir }}/playwright" \
-              2>&1 | tee "${{ steps.artifacts.outputs.dir }}/playwright.log"
-          else
-            echo "No web/e2e directory yet; skipping." \
-              | tee "${{ steps.artifacts.outputs.dir }}/playwright.log"
-          fi
+          pnpm exec playwright test tests/e2e web/tests/e2e \
+            --reporter="junit,line" \
+            --output="${{ steps.artifacts.outputs.dir }}/playwright" \
+            2>&1 | tee "${{ steps.artifacts.outputs.dir }}/playwright.log"
       - name: Upload artifacts
         if: always()
         uses: actions/upload-artifact@v7
