@@ -20,6 +20,7 @@
     "test:watch": "vitest",
     "test:report": "vitest run --coverage --coverage.reporter=json --coverage.reporter=json-summary --coverage.reporter=text --coverage.reportsDirectory=.tmp/coverage --reporter=json --outputFile=.tmp/coverage/test-results.json",
     "teste2e": "pnpm --filter @tutorfin/web run teste2e",
+    "test:e2e:report": "playwright test",
     "testall": "pnpm --filter @tutorfin/ledgertext run test && pytest --cov=tutorfin --cov-report=xml --cov-report=term packages/ledgertext-py/tests"
   },
   "keywords": [],
@@ -41,6 +42,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@playwright/test": "^1.59.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/react": "^18.3.18",
@@ -55,6 +57,7 @@
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^16.0.0",
     "jsdom": "^29.1.0",
+    "monocart-coverage-reports": "^2.12.11",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.20.0",
     "vite": "^6.2.0",

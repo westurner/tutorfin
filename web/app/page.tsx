@@ -1,8 +1,13 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { FormattedMessage } from "react-intl";
 import { useExhibitStore } from "@/lib/store";
-import { AccessibleScene } from "@/components/accessible-scene";
+
+const AccessibleScene = dynamic(
+  () => import("@/components/accessible-scene").then((m) => m.AccessibleScene),
+  { ssr: false }
+);
 
 export default function HomePage() {
   const { locale, setLocale, manualReset } = useExhibitStore();
