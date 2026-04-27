@@ -17,7 +17,7 @@ applyTo: *,**/*
 1. Always use codebase_search with target_directories="src" first to find existing core files
 2. Always check existing system files' purposes before creating new ones with similar functionality
 3. Always check how core objects (World, Entity, etc.) are instantiated in the existing codebase
-4. Always list the cursor rules you're using
+4. Always list the agent rules you're using
 
 - If a prompt or request specifies certain behaviors, languages, or output formats, you must obey them without deviation.
 - Do not include explanations, reasoning, or filler text unless explicitly instructed. Stick strictly to the requested output.
