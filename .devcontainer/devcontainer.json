@@ -1,0 +1,31 @@
+{
+    "name": "TutorFin Fedora Toolbox",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "."
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "python.defaultInterpreterPath": "/usr/bin/python3"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.isort",
+                "ms-toolsai.jupyter",
+                "ms-vscode-remote.remote-containers",
+                "ms-azuretools.vscode-containers",
+                "charliermarsh.ruff",
+                "dbaeumer.vscode-eslint",
+                "bradlc.vscode-tailwindcss",
+                "Lencerf.beancount",
+                "simon-the-shark.hledger-vscode"
+            ]
+        }
+    },
+    "features": {},
+    "remoteUser": "vscode",
+    "postCreateCommand": "sudo chown -R vscode:vscode . && sudo -u vscode sh -c 'cd tutorfin && pnpm install -y . && npx playwright install -y chromium'"
+}
