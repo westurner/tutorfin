@@ -103,7 +103,7 @@ jobs:
     name: Playwright E2E
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.50.0-noble
+      image: mcr.microsoft.com/playwright:v1.59.1-noble
     needs: typescript
     steps:
       - uses: actions/checkout@v6
