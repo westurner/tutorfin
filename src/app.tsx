@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import { A11yAnnouncer, A11yUserPreferences } from '@react-three/a11y';
 import { CameraRenderer } from './components/camera-renderer';
 import { PlayerRenderer } from './components/player-renderer';
+import { LayoutFlex } from './components/layout-flex';
 import { GameLoop } from './gameloop';
 import { Startup } from './startup';
 import { Color } from 'three';
@@ -11,9 +12,11 @@ export function App() {
 		<>
 			<Canvas style={{ background: 'white' }} shadows={false} gl={{ alpha: false }}>
 				<A11yUserPreferences>
-					<color attach="background" args={[new Color('#ffffff')]} />
+					<color attach="background" args={[new Color('#424040')]} />
 					<Startup initialCameraPosition={[0, 0, 10]} />
 					<GameLoop />
+
+					<LayoutFlex />
 
 					<CameraRenderer />
 					<PlayerRenderer />

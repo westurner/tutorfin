@@ -9,7 +9,7 @@ import src from '../assets/ships/fighter.glb?url';
 import { IsPlayer, Transform, Ref } from '../traits';
 
 export function PlayerView({ entity }: { entity: Entity }) {
-	const { scene } = useGLTF(src);
+	// const { scene } = useGLTF(src);
 	const groupRef = useRef<Group | null>(null) as MutableRefObject<Group | null>;
 
 	// Set up initial state with useCallback
@@ -19,7 +19,7 @@ export function PlayerView({ entity }: { entity: Entity }) {
 			groupRef.current = group;
 
 			// Initialize with default position at origin
-			entity.add(Ref(scene));
+			entity.add(Ref(group));
 			if (!entity.has(Transform)) {
 				entity.set(Transform, {
 					position: new THREE.Vector3(0, 0, 0),
@@ -28,13 +28,17 @@ export function PlayerView({ entity }: { entity: Entity }) {
 				});
 			}
 		},
-		[entity, scene]
+		[entity]
 	);
 
 	return (
 		<A11y role="content" description="Player ship">
 			<group ref={setInitial}>
-				<primitive object={scene} />
+				{/* <primitive object={scene} /> */}
+				<mesh>
+					<boxGeometry args={[1, 1, 1]} />
+					<meshStandardMaterial color="#383838" />
+				</mesh>
 			</group>
 		</A11y>
 	);
