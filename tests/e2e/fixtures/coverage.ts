@@ -3,11 +3,11 @@
 //
 // Usage in specs:
 //   import { test, expect } from "../fixtures/coverage";
-import { test as base, expect } from "@playwright/test";
-// @ts-expect-error - monocart ships its own types but we keep import loose
-import MCR from "monocart-coverage-reports";
+
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { test as base, expect } from "@playwright/test";
+import MCR from "monocart-coverage-reports";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
