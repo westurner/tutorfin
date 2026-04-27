@@ -126,6 +126,7 @@ jobs:
           echo "dir=$dir" >> "$GITHUB_OUTPUT"
       - name: Run E2E
         working-directory: ./
+        shell: bash
         run: |
           set -o pipefail
           pnpm exec playwright test tests/e2e web/tests/e2e \
