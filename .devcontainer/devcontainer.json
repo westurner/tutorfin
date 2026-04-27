@@ -21,7 +21,8 @@
                 "dbaeumer.vscode-eslint",
                 "bradlc.vscode-tailwindcss",
                 "Lencerf.beancount",
-                "simon-the-shark.hledger-vscode"
+                "simon-the-shark.hledger-vscode",
+                "ms-playwright.playwright"
             ]
         }
     },
