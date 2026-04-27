@@ -53,4 +53,33 @@ Thumbs.db
 .data
 packages/create-codetie/debug.log
 repomix-output.txt
-.repomix*
+.repomix*# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+curriculum/courses/**/modules/*.ipynb
+
+# Node / web
+node_modules/
+web/.next/
+web/.open-next/
+web/out/
+packages/*/dist/
+packages/*/node_modules/
+
+# CI artifacts (keep README only)
+.artifacts/*
+!.artifacts/README.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
